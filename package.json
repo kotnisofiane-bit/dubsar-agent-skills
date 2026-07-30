@@ -26,7 +26,7 @@
     "check:release": "node tools/check-public-boundary.mjs --root packages/dubsar-audit-readiness --mode release && node tools/check-public-boundary.mjs --root packages/dubsar-project-continuity --mode release",
     "demo": "node tools/run-demo.mjs",
     "inventory": "node tools/generate-release-inventory.mjs packages/dubsar-audit-readiness packages/dubsar-project-continuity",
-    "test": "npm run check:boundary && node --test tests/*.test.mjs"
+    "test": "npm run check:boundary && node tools/run-tests.mjs"
   },
   "engines": {
     "node": ">=20"
