@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Evidence Gaps"
+  short_description: "Separate evidence, gaps, and assumptions"
+  default_prompt: "Use $review-evidence-gaps to review this local audit preparation without inventing evidence."

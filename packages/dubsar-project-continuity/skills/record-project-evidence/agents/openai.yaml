@@ -1,0 +1,4 @@
+interface:
+  display_name: "Record Project Evidence"
+  short_description: "Record claims with reproducible evidence"
+  default_prompt: "Use $record-project-evidence to append this claim with reproducible evidence, artifact references, its validation result, and limitations."

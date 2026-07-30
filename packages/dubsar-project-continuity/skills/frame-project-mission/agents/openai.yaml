@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frame Project Mission"
+  short_description: "Turn intent into a bounded mission"
+  default_prompt: "Use $frame-project-mission to turn this project intent into a bounded mission with explicit acceptance evidence."

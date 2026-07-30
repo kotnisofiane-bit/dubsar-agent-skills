@@ -1,0 +1,114 @@
+{
+  "format": "dubsar.public-file-inventory/1",
+  "root_sha256": "f47eb2fc2bd2bfcd4594d9fe1d480376669ead3d28c63256a15633b17c6b7020",
+  "files": [
+    {
+      "path": ".claude-plugin/plugin.json",
+      "sha256": "401d10f5409742e1b638631248e75a9471efa28ecc31efe0dc558750656b151b"
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "sha256": "55adb147a56581b192f6480ecb10ab0326a2daf73d0f18fb84e82bb733b4f57a"
+    },
+    {
+      "path": ".cursor-plugin/plugin.json",
+      "sha256": "379203d17ead935ae908b1f53426f4831808c8fe57c60e69cc9898cb70321cce"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cbe28f6f6cebd146528ced1df3b4e93a8ff4dd1de808c4990bcb0ce9b804bc4e"
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "f21037d3bfa3ea3284294ca57573aa738df54ca28c217322cb9ff06b4e28edf6"
+    },
+    {
+      "path": "README.md",
+      "sha256": "35dce1d80cc03182bbda54871d5f705bffef6342a56f31820c2646b599aa4341"
+    },
+    {
+      "path": "scripts/init-project-workspace.mjs",
+      "sha256": "73e68dd1c835ba4cb9e6c3bf60a4a0345339827a7c20fd85eb16961cc01a4210"
+    },
+    {
+      "path": "scripts/render-project-summary.mjs",
+      "sha256": "84d88d09bd62e68f7ff222ed6190953e7f914fc5f0762fce9ecba9f673fa5ba0"
+    },
+    {
+      "path": "scripts/validate-project-workspace.mjs",
+      "sha256": "a462b17452665ff73f92c4ab057a23f521845fb760c6a05c1a1370fbf59d8dbe"
+    },
+    {
+      "path": "skills/decompose-project-lots/agents/openai.yaml",
+      "sha256": "71c762a01d9ed18a9aac4ab830eff02a3d8565e16e6effc1825eaf8b8e3b901e"
+    },
+    {
+      "path": "skills/decompose-project-lots/SKILL.md",
+      "sha256": "3ae16dc8bf5edbb6dee4321b664942740fb55b7c28d628f09662050a833a13d4"
+    },
+    {
+      "path": "skills/draft-execution-contract/agents/openai.yaml",
+      "sha256": "d8610da76a076a9a0199988777cb84e01a2df64503d8026d78b78309897a303e"
+    },
+    {
+      "path": "skills/draft-execution-contract/SKILL.md",
+      "sha256": "f17267c37a45bbe1d159076712a2e92d2071df19915d58a30123c3e50e3ea27e"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/agents/openai.yaml",
+      "sha256": "f35482e987b75a2ef41b063f2aef0ec2a26873aa43a8b017719dc98928bf8f78"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/references/data-contracts.md",
+      "sha256": "cb8bd1401423f21a463e5a25e87660564bed570eb79b6a37af98249ced1659b5"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/scripts/init-project-workspace.mjs",
+      "sha256": "5a9e3a4d2eeac3a64d245e35e686dcccdad2c809fe7bdd4a9a5d66d57d148f13"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/scripts/project-model.mjs",
+      "sha256": "a917a23f8a6f71627b8e9c465d5216f27b338e58d5e5c8b88098c5750030ae3a"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/scripts/render-project-summary.mjs",
+      "sha256": "9e2f609c052089d5f912925dad934feda2f4faed6989ed2cb4c1f1f53b30b42e"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/scripts/safe-io.mjs",
+      "sha256": "66e64adad3748baabf0e11074bff0808a21bbc169ac26a10e09abdf966f55dec"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/scripts/validate-project-workspace.mjs",
+      "sha256": "3bd2989b9d07afa13f902f6d13d8b39865de4289e9a101e1da7f086535972e52"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/SKILL.md",
+      "sha256": "4a67aa5f42b4e7466b5397c72c82934b3b2a82fc4f09429ea46dac8cfa46f840"
+    },
+    {
+      "path": "skills/frame-project-mission/agents/openai.yaml",
+      "sha256": "355ebdcba08b56adf24bbf1344a679e97a5d63fe7e9f4e0a40de7d204d1b1d22"
+    },
+    {
+      "path": "skills/frame-project-mission/SKILL.md",
+      "sha256": "24d11c95423e4506c8a5670376003fc22124d7b37941464664a3f95949419405"
+    },
+    {
+      "path": "skills/record-project-evidence/agents/openai.yaml",
+      "sha256": "19c726c11670867e6590db709dacd5599249d991ff1573090b79010dcb478f3c"
+    },
+    {
+      "path": "skills/record-project-evidence/SKILL.md",
+      "sha256": "772c23b1f50fe8e8b31c5b8704ffd9a0f721a8ce14db4bd485d3fbf3b7489b05"
+    },
+    {
+      "path": "skills/resume-project-context/agents/openai.yaml",
+      "sha256": "0364131dea872e60a8f08147af56028777f39d6abc4f83b8567014c8fb98676b"
+    },
+    {
+      "path": "skills/resume-project-context/SKILL.md",
+      "sha256": "070714e64eecc7b7d9c684d2fdd1e7a23f45f74b4097b87411c239450237a9f2"
+    }
+  ]
+}

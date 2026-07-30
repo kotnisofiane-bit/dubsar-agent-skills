@@ -1,0 +1,27 @@
+{
+  "format": "dubsar.project-lots/1",
+  "mission_id": "mission-example-001",
+  "lots": [
+    {
+      "lot_id": "lot-example-001",
+      "title": "Prepare the synthetic fixture",
+      "depends_on": [],
+      "in_scope": [
+        "examples"
+      ],
+      "excluded": [
+        "deployment"
+      ],
+      "expected_evidence": [
+        "evidence-example-001"
+      ],
+      "validation": [
+        "Inspect the generated fixture."
+      ],
+      "stop_conditions": [
+        "Source is ambiguous."
+      ],
+      "status": "candidate"
+    }
+  ]
+}

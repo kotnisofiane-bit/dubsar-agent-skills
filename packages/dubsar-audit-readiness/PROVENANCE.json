@@ -1,0 +1,33 @@
+{
+  "format": "dubsar.public-provenance/1",
+  "status": "approved",
+  "package": "dubsar-audit-readiness",
+  "version": "0.1.0",
+  "license_spdx": "MIT",
+  "source_code_origin": "clean-room-original",
+  "sources": [
+    {
+      "name": "Agent Skills specification",
+      "purpose": "Portable SKILL.md structure",
+      "url": "https://agentskills.io/specification"
+    },
+    {
+      "name": "Claude Code plugins",
+      "purpose": "Claude Code package manifest",
+      "url": "https://code.claude.com/docs/en/plugins"
+    },
+    {
+      "name": "Cursor plugins",
+      "purpose": "Cursor package manifest",
+      "url": "https://cursor.com/docs/plugins"
+    },
+    {
+      "name": "Hermes Agent skills",
+      "purpose": "Hermes Agent skill compatibility",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills"
+    }
+  ],
+  "release_review": "approved",
+  "reviewed_at": "2026-07-30",
+  "reviewed_by": "DUBSAR maintainers"
+}

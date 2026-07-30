@@ -1,0 +1,32 @@
+{
+  "format": "dubsar.automation-inventory/1",
+  "case_id": "case-example-001",
+  "generated_from": [
+    "artifact-example-001"
+  ],
+  "items": [
+    {
+      "id": "automation-example-001",
+      "name": "Synthetic follow-up",
+      "kind": "workflow",
+      "purpose": "Demonstrate evidence-aware audit preparation.",
+      "owner": "demo-owner",
+      "trigger": "synthetic-contact-update",
+      "inputs": [
+        "synthetic-contact-state"
+      ],
+      "outputs": [
+        "synthetic-message-candidate"
+      ],
+      "connected_systems": [
+        "demo-crm"
+      ],
+      "state": "active",
+      "evidence_state": "observed",
+      "evidence_refs": [
+        "artifact-example-001"
+      ]
+    }
+  ],
+  "gaps": []
+}

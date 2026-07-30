@@ -1,0 +1,11 @@
+{
+  "format": "dubsar.evidence-index/1",
+  "case_id": "case-example-001",
+  "artifacts": [
+    {
+      "artifact_id": "artifact-example-001",
+      "path": "evidence/workflow.json",
+      "sha256": "72b2227a519497db4567d28109d1f22f337c296dfd62df9d53d30cb4ff052878"
+    }
+  ]
+}

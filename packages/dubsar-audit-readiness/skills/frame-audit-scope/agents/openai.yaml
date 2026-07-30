@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frame Audit Scope"
+  short_description: "Define a bounded automation audit scope"
+  default_prompt: "Use $frame-audit-scope to define a bounded, evidence-aware scope for this automation review."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Decompose Project Lots"
+  short_description: "Split a mission into verifiable lots"
+  default_prompt: "Use $decompose-project-lots to split this approved mission into small, ordered, independently verifiable lots."

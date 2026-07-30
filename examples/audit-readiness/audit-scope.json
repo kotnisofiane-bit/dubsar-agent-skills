@@ -1,0 +1,29 @@
+{
+  "format": "dubsar.audit-scope/1",
+  "case_id": "case-example-001",
+  "objective": "Prepare a synthetic follow-up workflow for human review.",
+  "in_scope": [
+    "Synthetic follow-up workflow"
+  ],
+  "approved_evidence": [
+    "artifact-example-001"
+  ],
+  "excluded": [
+    "Production systems",
+    "Real personal data"
+  ],
+  "time_window": null,
+  "completion_criteria": [
+    "The supplied synthetic export is indexed and attributable."
+  ],
+  "limitations": [
+    "No external system was contacted."
+  ],
+  "approval": {
+    "approved_by": "demo-owner",
+    "approved_at": "2026-01-01T12:00:00Z",
+    "approval_ref": "synthetic-example-approval",
+    "source": "user-provided"
+  },
+  "status": "approved"
+}

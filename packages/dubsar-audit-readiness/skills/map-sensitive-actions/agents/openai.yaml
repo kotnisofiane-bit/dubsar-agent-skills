@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map Sensitive Actions"
+  short_description: "Map actions that need explicit control"
+  default_prompt: "Use $map-sensitive-actions to map material effects, review points, roles, and stop conditions."

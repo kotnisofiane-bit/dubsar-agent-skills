@@ -1,0 +1,28 @@
+{
+  "format": "dubsar.project-mission/1",
+  "mission_id": "mission-example-001",
+  "title": "Synthetic portal proof",
+  "desired_outcome": "Produce a user-visible synthetic proof.",
+  "purpose": "Demonstrate safe project continuity.",
+  "in_scope": [
+    "Synthetic fixture"
+  ],
+  "excluded": [
+    "Deployment"
+  ],
+  "known_inputs": [
+    "Synthetic product brief"
+  ],
+  "constraints": [
+    "No external write"
+  ],
+  "acceptance_evidence": [
+    "evidence-example-001"
+  ],
+  "risks": [],
+  "open_decisions": [],
+  "stop_conditions": [
+    "Unexpected external write"
+  ],
+  "status": "approved"
+}

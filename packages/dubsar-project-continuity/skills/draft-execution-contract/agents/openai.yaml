@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draft Execution Contract"
+  short_description: "Define scope, proof, and stop rules"
+  default_prompt: "Use $draft-execution-contract to define scope, proof, exclusions, recovery expectations, and stop rules for the candidate lot."

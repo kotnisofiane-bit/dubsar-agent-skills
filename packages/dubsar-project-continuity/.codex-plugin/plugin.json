@@ -1,0 +1,21 @@
+{
+  "name": "dubsar-project-continuity",
+  "version": "0.1.0",
+  "description": "Keep project intent, lots, execution boundaries, evidence, and handoffs explicit.",
+  "author": {
+    "name": "DUBSAR"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "DUBSAR Project Continuity",
+    "shortDescription": "Keep project work bounded and resumable.",
+    "longDescription": "Offline skills for mission framing, lot decomposition, execution contracts, evidence records, and safe project resume.",
+    "developerName": "DUBSAR",
+    "category": "Productivity",
+    "capabilities": [
+      "Project continuity",
+      "Evidence-aware handoffs"
+    ],
+    "defaultPrompt": "Turn this project into a bounded, verifiable, and safely resumable workflow."
+  }
+}

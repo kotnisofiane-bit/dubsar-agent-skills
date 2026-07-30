@@ -1,0 +1,19 @@
+{
+  "format": "dubsar.evidence-review/1",
+  "case_id": "case-example-001",
+  "supported_observations": [
+    {
+      "statement": "The synthetic workflow export is indexed with a reproducible digest.",
+      "evidence_refs": [
+        "artifact-example-001"
+      ]
+    }
+  ],
+  "reported_statements": [],
+  "contradictions": [],
+  "missing_evidence": [],
+  "limitations": [
+    "This fixture is not an audit result."
+  ],
+  "preparation_status": "ready_for_human_review"
+}

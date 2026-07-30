@@ -1,0 +1,26 @@
+{
+  "format": "dubsar.sensitive-actions/1",
+  "case_id": "case-example-001",
+  "review_status": "reviewed",
+  "actions": [
+    {
+      "id": "action-example-001",
+      "automation_id": "automation-example-001",
+      "effect": "Prepare an external message candidate.",
+      "classes": [
+        "communication"
+      ],
+      "current_safeguards": [
+        "Synthetic fixture only"
+      ],
+      "evidence_refs": [
+        "artifact-example-001"
+      ],
+      "uncertainties": [],
+      "proposed_review_point": "Review before sending.",
+      "proposed_stop_condition": "Suppression state is unknown.",
+      "accountable_role": "demo-owner",
+      "human_status": "unreviewed"
+    }
+  ]
+}

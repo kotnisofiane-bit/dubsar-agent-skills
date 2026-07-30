@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume Project Context"
+  short_description: "Resume safely from a project handoff"
+  default_prompt: "Use $resume-project-context to reconstruct the current state from these local continuity files without inventing progress."

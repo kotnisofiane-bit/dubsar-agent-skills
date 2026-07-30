@@ -1,0 +1,34 @@
+{
+  "name": "dubsar-agent-skills",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable, offline Agent Skills for automation audit readiness and evidence-aware project continuity.",
+  "license": "MIT",
+  "homepage": "https://github.com/kotnisofiane-bit/dubsar-agent-skills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotnisofiane-bit/dubsar-agent-skills.git"
+  },
+  "keywords": [
+    "agent-skills",
+    "ai-agents",
+    "automation-audit",
+    "project-continuity",
+    "ai-governance",
+    "claude-code",
+    "codex",
+    "cursor",
+    "hermes-agent"
+  ],
+  "scripts": {
+    "check:boundary": "node tools/check-public-boundary.mjs --root packages/dubsar-audit-readiness --mode development && node tools/check-public-boundary.mjs --root packages/dubsar-project-continuity --mode development",
+    "check:release": "node tools/check-public-boundary.mjs --root packages/dubsar-audit-readiness --mode release && node tools/check-public-boundary.mjs --root packages/dubsar-project-continuity --mode release",
+    "demo": "node tools/run-demo.mjs",
+    "inventory": "node tools/generate-release-inventory.mjs packages/dubsar-audit-readiness packages/dubsar-project-continuity",
+    "test": "npm run check:boundary && node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

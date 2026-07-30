@@ -1,0 +1,32 @@
+{
+  "format": "dubsar.execution-contract/1",
+  "mission_id": "mission-example-001",
+  "lot_id": "lot-example-001",
+  "contract_id": "contract-example-001",
+  "targets": [
+    "examples"
+  ],
+  "allowed_actions": [
+    "Create synthetic text files."
+  ],
+  "forbidden_actions": [
+    "Deploy",
+    "Merge"
+  ],
+  "protected_areas": [
+    "Production systems"
+  ],
+  "validation": [
+    "Inspect the generated fixture."
+  ],
+  "required_evidence": [
+    "evidence-example-001"
+  ],
+  "recovery_expectations": [
+    "Keep the source fixture unchanged."
+  ],
+  "stop_conditions": [
+    "Unexpected external write"
+  ],
+  "status": "approved"
+}

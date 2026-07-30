@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inventory Automations"
+  short_description: "Build a portable automation inventory"
+  default_prompt: "Use $inventory-automations to inventory automations and agents from my approved local evidence."

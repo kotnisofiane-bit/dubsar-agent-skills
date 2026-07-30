@@ -1,0 +1,4 @@
+interface:
+  display_name: "Export Audit Bundle"
+  short_description: "Prepare a deterministic review bundle"
+  default_prompt: "Use $export-audit-bundle to prepare a portable, non-certifying bundle for human review."

@@ -1,0 +1,114 @@
+{
+  "format": "dubsar.public-file-inventory/1",
+  "root_sha256": "746d43a7dfc4eaceaa640e819f1120d88016f29337ad45862bb361bc5c929afb",
+  "files": [
+    {
+      "path": ".claude-plugin/plugin.json",
+      "sha256": "b672b444a21916ce4984497312f6ebcb7b557334dc78433be36cb178c63746b9"
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "sha256": "ee562dbf67324344f5dcb920a8d9d3bc313423a6c74fe0956f2034ac61ca00fd"
+    },
+    {
+      "path": ".cursor-plugin/plugin.json",
+      "sha256": "9ff1cea13b5d1a54d538eac19ebf271fbc7d19c7ba0500476224b2f91685842f"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cbe28f6f6cebd146528ced1df3b4e93a8ff4dd1de808c4990bcb0ce9b804bc4e"
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "8abfea069b07633db342c9a53d01473e4fd4f1d5eb381332d9b600e3d7ff486b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "37484c0353fd511b49d551a9de8e4be70b06fd734ce65a6b8f4ca85b26f468d7"
+    },
+    {
+      "path": "scripts/export-audit-bundle.mjs",
+      "sha256": "78245540dbcc1ad9b77c9708a7c97fba9d8e05e42914030906ce7657e173e7bc"
+    },
+    {
+      "path": "scripts/init-audit-workspace.mjs",
+      "sha256": "12a72de81158b079f71994f2f903e10e674e8a45fb65e2244fb93b369b37169f"
+    },
+    {
+      "path": "scripts/validate-audit-workspace.mjs",
+      "sha256": "48f0368d1834ba6c02078978e1c904b57cb13388d0f0e16ecb3afe3e1d09b511"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/agents/openai.yaml",
+      "sha256": "6af52530ef65a937385158b7436b147fe5e35bbae3ac198a1c63d0493441bf58"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/references/data-contracts.md",
+      "sha256": "fe9fc2c7b3e959ec1cfd08dfb65f3d7709d764136c7c0d005e93318a506d29c1"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/scripts/audit-model.mjs",
+      "sha256": "c4419bde054ae357ee75412d2a4631687147bdbfa05e2acd09a2cc1075ccb07b"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/scripts/export-audit-bundle.mjs",
+      "sha256": "acd8ab451245edd9874846a1c5ca88ba3d91faf5f4a0094bfc27145ac588a075"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/scripts/init-audit-workspace.mjs",
+      "sha256": "75946a289d29ba6f6664007ed91610ed9a5d540ff0a648719af4ede7d610dd12"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/scripts/safe-io.mjs",
+      "sha256": "d8922aa7e23a729edcc89638eb11d8d4ddaa52a9332ba1c105ac6d5502290a78"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/scripts/validate-audit-workspace.mjs",
+      "sha256": "aecdfd6f4d2a6dfc2d4301f94cc671b1a3bde717fe50946824b53ec466d44411"
+    },
+    {
+      "path": "skills/dubsar-audit-readiness/SKILL.md",
+      "sha256": "68817d916e0ae4709cb72d27e640d9d6c0073deb690105294438e00ef87d7188"
+    },
+    {
+      "path": "skills/export-audit-bundle/agents/openai.yaml",
+      "sha256": "3739f3aa95a1aca57f80e2896b03010655888722f1fc716d7f0d951f8dcae79e"
+    },
+    {
+      "path": "skills/export-audit-bundle/SKILL.md",
+      "sha256": "81e6148618ab5445c8db5aaf5b5d5955c4ac61abbd44905b322b84b5c98225b2"
+    },
+    {
+      "path": "skills/frame-audit-scope/agents/openai.yaml",
+      "sha256": "ea0bd55635795be98fadb221c2dfa897a36dd2b9c10f0ada51b57fe45cab727e"
+    },
+    {
+      "path": "skills/frame-audit-scope/SKILL.md",
+      "sha256": "e7b0a5ba686b3f60730ef9079174758a8872baa979e784dd293cba09c23e209f"
+    },
+    {
+      "path": "skills/inventory-automations/agents/openai.yaml",
+      "sha256": "d29821f5d8b7b7662d7222327710890f37af10edc5651e7c54940f2642ab0692"
+    },
+    {
+      "path": "skills/inventory-automations/SKILL.md",
+      "sha256": "27d25e3aa1602ce745e4a2d1eb6fce9a8dc12a37eb5660e416fd7afab2002390"
+    },
+    {
+      "path": "skills/map-sensitive-actions/agents/openai.yaml",
+      "sha256": "1656475b765bc33f6da66c514d3239444e38b1f2a3d2d1376a0ed9744da1a19c"
+    },
+    {
+      "path": "skills/map-sensitive-actions/SKILL.md",
+      "sha256": "bae097ba964ebfd110d3e3c2c820480a41fc02c73e787830289adf3dcc7102a6"
+    },
+    {
+      "path": "skills/review-evidence-gaps/agents/openai.yaml",
+      "sha256": "6ab38016e0355b6468790d36da96595cc37da5dc904012d846b53795dec5a795"
+    },
+    {
+      "path": "skills/review-evidence-gaps/SKILL.md",
+      "sha256": "fe409e0c03e6df5a1e0c88a5c28ae773d2d861cd0b1f5ab26cb9193174bc712c"
+    }
+  ]
+}
