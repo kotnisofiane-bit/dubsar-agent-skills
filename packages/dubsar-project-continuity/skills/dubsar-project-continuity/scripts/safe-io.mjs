@@ -120,7 +120,7 @@ export async function prepareOutputDirectory(input) {
     }
     await mkdir(target, { recursive: true });
   }
-  return target;
+  return realpath(target);
 }
 
 export async function openWorkspace(input) {
@@ -137,11 +137,8 @@ export async function openWorkspace(input) {
   if (info.isSymbolicLink() || !info.isDirectory()) {
     throw new PublicPluginError("WORKSPACE_NOT_DIRECTORY");
   }
-  const resolved = await realpath(root);
-  if (comparablePath(resolved) !== comparablePath(root)) {
-    throw new PublicPluginError("WORKSPACE_SYMLINK_REJECTED");
-  }
-  return root;
+  await assertNoSymlinkAncestors(root);
+  return realpath(root);
 }
 
 export function safeChild(root, relativePath) {

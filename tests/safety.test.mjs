@@ -244,6 +244,63 @@ test("a directory link cannot route evidence outside the workspace", async (t) =
   assert.ok(validation.findings.includes("ARTIFACT_OUTSIDE_WORKSPACE"));
 });
 
+test("workspace creation rejects linked targets and ancestors", async (t) => {
+  const testRoot = await mkdtemp(
+    path.join(tmpdir(), "dubsar-safety-workspace-link-"),
+  );
+  t.after(async () => {
+    await rm(testRoot, { recursive: true, force: true });
+  });
+
+  const linkType = process.platform === "win32" ? "junction" : "dir";
+  const outsideAudit = path.join(testRoot, "outside-audit");
+  const outsideProject = path.join(testRoot, "outside-project");
+  const outsideAncestor = path.join(testRoot, "outside-ancestor");
+  await mkdir(outsideAudit);
+  await mkdir(outsideProject);
+  await mkdir(outsideAncestor);
+
+  const auditTargetLink = path.join(testRoot, "audit-target-link");
+  const projectTargetLink = path.join(testRoot, "project-target-link");
+  const ancestorLink = path.join(testRoot, "ancestor-link");
+  try {
+    await symlink(outsideAudit, auditTargetLink, linkType);
+    await symlink(outsideProject, projectTargetLink, linkType);
+    await symlink(outsideAncestor, ancestorLink, linkType);
+  } catch (error) {
+    if (error?.code === "EPERM") {
+      t.skip("Directory-link creation is not permitted on this profile.");
+      return;
+    }
+    throw error;
+  }
+
+  const rejectsLinkedPath = (error) =>
+    error?.code === "SYMLINK_ANCESTOR_REJECTED";
+  await assert.rejects(
+    initAuditWorkspace(auditTargetLink, "case-linked-target"),
+    rejectsLinkedPath,
+  );
+  await assert.rejects(
+    initProjectWorkspace(projectTargetLink, "mission-linked-target"),
+    rejectsLinkedPath,
+  );
+  await assert.rejects(
+    initAuditWorkspace(
+      path.join(ancestorLink, "audit-child"),
+      "case-linked-ancestor",
+    ),
+    rejectsLinkedPath,
+  );
+  await assert.rejects(
+    initProjectWorkspace(
+      path.join(ancestorLink, "project-child"),
+      "mission-linked-ancestor",
+    ),
+    rejectsLinkedPath,
+  );
+});
+
 test("cyclic project lots block continuity", async (t) => {
   const testRoot = await mkdtemp(path.join(tmpdir(), "dubsar-safety-cycle-"));
   t.after(async () => {
