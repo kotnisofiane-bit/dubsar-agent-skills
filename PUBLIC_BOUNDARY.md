@@ -2,6 +2,15 @@
 
 These packs are a deliberately small, offline preparation layer.
 
+## Relationship to DUBSAR
+
+The MIT license applies only to the files in this repository. These packs are
+a public adaptation of the DUBSAR governance doctrine, not a distribution of
+the separate private DUBSAR product, Core, or runtime. See the
+[DUBSAR website](https://dubsar.ai/) and
+[public documentation](https://github.com/kotnisofiane-bit/DUBSAR) for public
+product context.
+
 ## Included
 
 - portable Agent Skills;

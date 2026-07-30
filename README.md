@@ -12,10 +12,22 @@ Codex, Cursor, and Hermes Agent. The packs help an AI agent structure local
 evidence and project context without connecting to production services,
 granting itself authority, or presenting preparation work as an audit result.
 
-This repository is a lightweight public adaptation of the DUBSAR governance
-doctrine: portable instructions, local contracts, and deterministic helpers.
-It is not the DUBSAR product and includes no hooks, MCP server, DUBSAR Core
-connection, enforcement runtime, or background orchestrator.
+## DUBSAR ecosystem
+
+[Sofiane Kotni](https://dubsar.ai/sofiane-kotni/) created DUBSAR and these
+public Agent Skills. Related public resources:
+
+- [DUBSAR website](https://dubsar.ai/)
+- [DUBSAR public documentation](https://github.com/kotnisofiane-bit/DUBSAR)
+- [Sofiane Kotni on LinkedIn](https://www.linkedin.com/in/sofiane-kotni/)
+- [*Digital Trust*](https://www.amazon.fr/dp/B0H739BFJP) and
+  [Sofiane Kotni's Amazon author page](https://www.amazon.fr/stores/Sofiane-KOTNI/author/B0H6NBHZTC)
+
+The MIT license covers only this repository. These packs are a lightweight
+public adaptation of the DUBSAR governance doctrine: portable instructions,
+local contracts, and deterministic helpers. They are not the private DUBSAR
+product, Core, or runtime and include no hooks, MCP server, Core connection,
+enforcement runtime, or background orchestrator.
 
 > **Status:** public beta v0.1.1. The local test suite covers public-boundary
 > rules, deterministic outputs, synthetic end-to-end workflows, host manifest
