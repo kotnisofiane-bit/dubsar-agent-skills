@@ -20,8 +20,9 @@ public Agent Skills. Related public resources:
 - [DUBSAR website](https://dubsar.ai/)
 - [DUBSAR public documentation](https://github.com/kotnisofiane-bit/DUBSAR)
 - [Sofiane Kotni on LinkedIn](https://www.linkedin.com/in/sofiane-kotni/)
-- [*Digital Trust*](https://www.amazon.fr/dp/B0H739BFJP) and
-  [Sofiane Kotni's Amazon author page](https://www.amazon.fr/stores/Sofiane-KOTNI/author/B0H6NBHZTC)
+- [*Digital Trust* — English edition](https://www.amazon.fr/dp/B0GZ4RH1KX)
+- [*Digital Trust* — French edition](https://www.amazon.fr/dp/B0H739BFJP)
+- [Sofiane Kotni's Amazon author page](https://www.amazon.fr/stores/Sofiane-KOTNI/author/B0H6NBHZTC)
 
 The MIT license covers only this repository. These packs are a lightweight
 public adaptation of the DUBSAR governance doctrine: portable instructions,
