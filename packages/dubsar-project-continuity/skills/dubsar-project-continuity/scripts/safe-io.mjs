@@ -76,16 +76,32 @@ async function existingAncestor(candidate) {
   }
 }
 
+async function assertNoSymlinkAncestors(candidate) {
+  let current = await existingAncestor(candidate);
+  while (true) {
+    let info;
+    try {
+      info = await lstat(current);
+    } catch {
+      throw new PublicPluginError("PATH_INSPECTION_FAILED");
+    }
+    if (info.isSymbolicLink()) {
+      throw new PublicPluginError("SYMLINK_ANCESTOR_REJECTED");
+    }
+    const parent = path.dirname(current);
+    if (parent === current) {
+      return;
+    }
+    current = parent;
+  }
+}
+
 export async function prepareOutputDirectory(input) {
   if (containsTraversal(input)) {
     throw new PublicPluginError("PATH_TRAVERSAL_REJECTED");
   }
   const target = path.resolve(input);
-  const ancestor = await existingAncestor(target);
-  const resolvedAncestor = await realpath(ancestor);
-  if (comparablePath(ancestor) !== comparablePath(resolvedAncestor)) {
-    throw new PublicPluginError("SYMLINK_ANCESTOR_REJECTED");
-  }
+  await assertNoSymlinkAncestors(target);
 
   try {
     const info = await lstat(target);
