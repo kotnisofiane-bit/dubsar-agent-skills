@@ -152,6 +152,21 @@ test("audit export cannot target a child of its source workspace", async (t) => 
   );
 });
 
+test("project summary cannot target a child of its source workspace", async (t) => {
+  const testRoot = await mkdtemp(
+    path.join(tmpdir(), "dubsar-safety-project-output-"),
+  );
+  t.after(async () => {
+    await rm(testRoot, { recursive: true, force: true });
+  });
+  const workspace = path.join(testRoot, "workspace");
+  await initProjectWorkspace(workspace, "mission-safety-output");
+  await assert.rejects(
+    renderProjectSummary(workspace, path.join(workspace, "summary")),
+    /OUTPUT_INSIDE_WORKSPACE/u,
+  );
+});
+
 test("symbolic-link evidence is rejected when the platform permits the fixture", async (t) => {
   const testRoot = await mkdtemp(path.join(tmpdir(), "dubsar-safety-link-"));
   t.after(async () => {

@@ -1,6 +1,6 @@
 import { fileURLToPath } from "node:url";
-import path from "node:path";
 import {
+  canonicalCandidate,
   copyFileExclusive,
   isInsideOrEqual,
   openWorkspace,
@@ -21,7 +21,7 @@ import {
 
 export async function exportAuditBundle(input, output) {
   const sourceRoot = await openWorkspace(input);
-  const outputCandidate = path.resolve(output);
+  const outputCandidate = await canonicalCandidate(output);
   if (isInsideOrEqual(sourceRoot, outputCandidate)) {
     throw new PublicPluginError("OUTPUT_INSIDE_WORKSPACE");
   }

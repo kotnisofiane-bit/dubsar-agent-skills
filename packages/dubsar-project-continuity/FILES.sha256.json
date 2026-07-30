@@ -1,6 +1,6 @@
 {
   "format": "dubsar.public-file-inventory/1",
-  "root_sha256": "afb951d9b009cd7cc5e43ebcb41d6c835283b2dc7082562458c9b5b1fe8939e8",
+  "root_sha256": "334a46b2d45f7d7a81020a531b3b4f483b0efe1b1377958b638745d7872a7aa3",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
@@ -72,11 +72,11 @@
     },
     {
       "path": "skills/dubsar-project-continuity/scripts/render-project-summary.mjs",
-      "sha256": "9e2f609c052089d5f912925dad934feda2f4faed6989ed2cb4c1f1f53b30b42e"
+      "sha256": "44a27e6514ce14ac60db5355a5dbd9054e77db7d9de6d01ba78db5db9ffe68a3"
     },
     {
       "path": "skills/dubsar-project-continuity/scripts/safe-io.mjs",
-      "sha256": "14506bd380d5abad5fdd7e374dc9dd91716ea2eba76160a504638b49853f7661"
+      "sha256": "54b3d44ace7c4b1cded3edadda4438ba80681f3c08cb69296156f32067425c4b"
     },
     {
       "path": "skills/dubsar-project-continuity/scripts/validate-project-workspace.mjs",

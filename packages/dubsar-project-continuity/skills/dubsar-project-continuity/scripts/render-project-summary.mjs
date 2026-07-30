@@ -1,6 +1,6 @@
 import { fileURLToPath } from "node:url";
-import path from "node:path";
 import {
+  canonicalCandidate,
   isInsideOrEqual,
   openWorkspace,
   parseArgs,
@@ -114,7 +114,7 @@ function renderSummary(documents, validation) {
 
 export async function renderProjectSummary(input, output) {
   const sourceRoot = await openWorkspace(input);
-  const outputCandidate = path.resolve(output);
+  const outputCandidate = await canonicalCandidate(output);
   if (isInsideOrEqual(sourceRoot, outputCandidate)) {
     throw new PublicPluginError("OUTPUT_INSIDE_WORKSPACE");
   }

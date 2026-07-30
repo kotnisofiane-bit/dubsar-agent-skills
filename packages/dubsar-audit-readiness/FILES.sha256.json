@@ -1,6 +1,6 @@
 {
   "format": "dubsar.public-file-inventory/1",
-  "root_sha256": "24a9c0b2c72530a3b15410ccf3afecade1677b551d57ae3bbe7186812d7f27de",
+  "root_sha256": "889acd3fe5dd93452ac95b62482da52f56d83d6e4effdff1e87ea2ae72558751",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
@@ -52,7 +52,7 @@
     },
     {
       "path": "skills/dubsar-audit-readiness/scripts/export-audit-bundle.mjs",
-      "sha256": "acd8ab451245edd9874846a1c5ca88ba3d91faf5f4a0094bfc27145ac588a075"
+      "sha256": "48ab01a66ee3894118824b530708284a1f7c42aeab9e6273a157436a35282494"
     },
     {
       "path": "skills/dubsar-audit-readiness/scripts/init-audit-workspace.mjs",
@@ -60,7 +60,7 @@
     },
     {
       "path": "skills/dubsar-audit-readiness/scripts/safe-io.mjs",
-      "sha256": "9ad761f26d3832fde9d1924d9dbdf04527d430e9ccdecbe5312e72aa23e7354d"
+      "sha256": "afcadf2ae26ab6ddbc1dbcc7aadfe8c49f2b0c5f0b14334cc2cc7ba098d71a88"
     },
     {
       "path": "skills/dubsar-audit-readiness/scripts/validate-audit-workspace.mjs",

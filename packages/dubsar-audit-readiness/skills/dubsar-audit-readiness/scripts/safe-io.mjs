@@ -80,6 +80,7 @@ async function existingAncestor(candidate) {
 
 async function assertNoSymlinkAncestors(candidate) {
   let current = await existingAncestor(candidate);
+  const ancestor = current;
   while (true) {
     let info;
     try {
@@ -92,18 +93,24 @@ async function assertNoSymlinkAncestors(candidate) {
     }
     const parent = path.dirname(current);
     if (parent === current) {
-      return;
+      return ancestor;
     }
     current = parent;
   }
 }
 
-export async function prepareOutputDirectory(input) {
+export async function canonicalCandidate(input) {
   if (containsTraversal(input)) {
     throw new PublicPluginError("PATH_TRAVERSAL_REJECTED");
   }
   const target = path.resolve(input);
-  await assertNoSymlinkAncestors(target);
+  const ancestor = await assertNoSymlinkAncestors(target);
+  const resolvedAncestor = await realpath(ancestor);
+  return path.resolve(resolvedAncestor, path.relative(ancestor, target));
+}
+
+export async function prepareOutputDirectory(input) {
+  const target = await canonicalCandidate(input);
 
   try {
     const info = await lstat(target);
