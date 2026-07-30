@@ -1,6 +1,6 @@
 {
   "name": "dubsar-agent-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "Portable, offline Agent Skills for automation audit readiness and evidence-aware project continuity.",

@@ -5,6 +5,8 @@ These packs are a deliberately small, offline preparation layer.
 ## Included
 
 - portable Agent Skills;
+- a lightweight public adaptation of DUBSAR governance doctrine through local
+  contracts and deterministic helpers;
 - deterministic local scripts using only Node.js built-ins;
 - synthetic examples and non-authoritative templates;
 - local validation, hashing, inventory, and human-review preparation;
@@ -13,10 +15,11 @@ These packs are a deliberately small, offline preparation layer.
 ## Excluded
 
 - production DUBSAR implementation details;
+- DUBSAR Core, MCP servers, product hooks, enforcement runtimes, background
+  orchestration, and canonical session or execution records;
 - internal tool names, routes, protocols, repositories, and deployment topology;
 - production connectors, credentials, activation, and billing;
 - enforcement, runtime interception, or automatic permission grants;
-- hooks and background execution;
 - claims of certification, legal compliance, or completed audit.
 
 The public packs may say that evidence is structurally ready for human review.

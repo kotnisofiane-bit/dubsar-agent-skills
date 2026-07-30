@@ -21,14 +21,17 @@ drawing conclusions.
 
 ## Workflow
 
-1. Restate the business objective in one sentence.
-2. List the systems, automations, agents, and business processes explicitly in
+1. Run the complete pack's `ensure-audit-workspace.mjs` from the current
+   directory. Reuse the returned audit workspace or let it initialize one and
+   generate `case_id`. Do not ask the user to name or manage it.
+2. Restate the business objective in one sentence.
+3. List the systems, automations, agents, and business processes explicitly in
    scope. Do not add systems merely because they probably exist.
-3. Record the approved evidence sources and how each source was provided.
-4. Record excluded systems, data, actions, and time periods.
-5. Mark every uncertain statement as `unknown` or `reported`, never `observed`.
-6. Define what would make the preparation complete enough for human review.
-7. Ask the user to approve the scope before suggesting evidence collection.
+4. Record the approved evidence sources and how each source was provided.
+5. Record excluded systems, data, actions, and time periods.
+6. Mark every uncertain statement as `unknown` or `reported`, never `observed`.
+7. Define what would make the preparation complete enough for human review.
+8. Ask the user to approve the scope before suggesting evidence collection.
    Record a role or pseudonymous identifier, an ISO 8601 UTC timestamp, and a
    local approval reference. Do not invent these values.
 
@@ -39,7 +42,7 @@ Produce `audit-scope.json` with this stable shape:
 ```json
 {
   "format": "dubsar.audit-scope/1",
-  "case_id": "user-chosen-or-generated-local-id",
+  "case_id": "generated-automatically",
   "objective": "bounded business question",
   "in_scope": [],
   "approved_evidence": [],
@@ -67,10 +70,14 @@ it. Then record:
 Approval means only that the preparation scope is accepted; it grants no
 execution authority.
 
-When this skill is installed with the complete pack, use
-`../dubsar-audit-readiness/scripts/init-audit-workspace.mjs` with an explicit
-`--output` directory. Otherwise create the documented JSON manually. Never
-overwrite an existing non-empty directory.
+When this skill is installed with the complete pack, run:
+
+```bash
+node ../dubsar-audit-readiness/scripts/ensure-audit-workspace.mjs --start <current-directory>
+```
+
+Otherwise create the documented JSON manually. Never overwrite an existing
+workspace.
 
 ## Boundaries
 

@@ -1,6 +1,6 @@
 ---
 name: dubsar-project-continuity
-description: Keep a significant project bounded, evidence-aware, and safely resumable through a mission, lots, an execution contract, evidence records, and a deterministic handoff. Use when the user requests the complete end-to-end workflow or installs the DUBSAR pack as one portable Hermes skill; prefer a specialized skill for a single step.
+description: Keep a significant project bounded, evidence-aware, and safely resumable across conversations and agent hosts through an automatically reused local mission workspace, lots, an execution contract, evidence records, and a deterministic handoff. Use for the complete lightweight continuity workflow or as the portable Hermes umbrella skill; prefer a specialized skill for one step.
 ---
 
 # DUBSAR Project Continuity
@@ -17,20 +17,29 @@ For a single step, prefer `frame-project-mission`,
 ## Inputs
 
 - the user's desired outcome, constraints, exclusions, and acceptance signals;
-- an explicit local workspace path;
+- the current working project and an optional explicit continuity-workspace
+  override;
 - any existing mission, lot, contract, evidence, or handoff artifacts.
 
 ## Workflow
 
-1. Record the desired outcome, scope, exclusions, acceptance evidence, risks,
+1. Resolve continuity before creating it with
+   `scripts/ensure-project-workspace.mjs --start <current-directory>`.
+   The helper stays inside the nearest Git project, reuses the nearest ancestor
+   `.dubsar-project`, or initializes one at the project root and generates its
+   identifier. Without a Git root, the supplied start directory is the
+   boundary. If the user's request is a genuinely different mission, ask for
+   that material separation before reuse, then use `--workspace` once to
+   create an exact marker in a dedicated in-project directory.
+2. Record the desired outcome, scope, exclusions, acceptance evidence, risks,
    and stop conditions in `mission.json`.
-2. Split an approved mission into ordered, independently verifiable entries in
+3. Split an approved mission into ordered, independently verifiable entries in
    `lots.json`.
-3. Select one candidate lot and define its exact execution boundary in
+4. Select one candidate lot and define its exact execution boundary in
    `execution-contract.json`.
-4. Append observed, reported, derived, or unverified claims to `evidence.json`.
-5. Validate identifiers, dependencies, evidence references, and contract state.
-6. Render a stable handoff that states facts, limitations, the next preparation
+5. Append observed, reported, derived, or unverified claims to `evidence.json`.
+6. Validate identifiers, dependencies, evidence references, and contract state.
+7. Render a stable handoff that states facts, limitations, the next preparation
    step, and actions that remain unauthorized.
 
 Read [the data contracts](references/data-contracts.md) before creating or
@@ -41,12 +50,15 @@ repairing the JSON files.
 The scripts use Node.js built-ins only:
 
 ```bash
-node scripts/init-project-workspace.mjs --output ./.dubsar-project
+node scripts/ensure-project-workspace.mjs --start .
 node scripts/validate-project-workspace.mjs --root ./.dubsar-project
 node scripts/render-project-summary.mjs --root ./.dubsar-project --output ./handoff
 ```
 
-Always pass explicit paths. Rendering a summary never starts the next lot.
+Users do not need to name or remember an identifier. Resolve the returned
+`workspace` against the same `--start` directory, then pass that canonical
+local path to later helpers without exposing it in the user-facing result.
+Rendering a summary never starts the next lot.
 
 ## Output
 
@@ -62,7 +74,12 @@ handoff summary. Report:
 ## Limits
 
 - Do not infer completion from a plan, diff, command, or agent statement alone.
-- Do not merge contradictory missions or create missing identifiers.
+- Reuse recorded identifiers. Generate a `mission_id` only while initializing
+  a genuinely new or pre-existing project without continuity files.
+- Keep one active mission workspace per directory scope. Never recycle an old
+  identifier for a different mission.
+- Treat linked, partial, or malformed workspaces, invalid explicit overrides,
+  identifier mismatches, and contradictory evidence as blockers.
 - Do not deploy, merge, send, synchronize, or execute project work from this
   skill.
 - Stop when identifiers or evidence conflict and request human resolution.

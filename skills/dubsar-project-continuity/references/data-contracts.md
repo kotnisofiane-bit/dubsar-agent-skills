@@ -1,6 +1,20 @@
 # Project-continuity data contracts
 
-Every document uses the same non-secret local `mission_id`.
+Every document for one mission shares one automatically generated, non-secret
+local `mission_id`. It belongs to the mission, not to a chat, host session, or
+context window. Reuse it across context compression, new conversations, agent
+hosts, interruptions, and handoffs. Generate another only for a genuinely new
+mission. An explicit override remains available for controlled tooling and
+tests.
+
+A local `mission_id` is not a DUBSAR Core `session_id` or `execution_id` and
+creates no canonical runtime record.
+
+One directory scope has one active mission workspace. A materially different
+mission requires an explicit human separation decision before reuse. Create
+its exact `.dubsar-project` marker inside a dedicated in-project directory and
+let the helper generate the new ID; never delete, overwrite, or recycle the
+previous mission ID.
 
 ## Required files
 

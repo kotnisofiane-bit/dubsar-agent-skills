@@ -18,14 +18,17 @@ executing work.
 
 ## Workflow
 
-1. State the desired outcome in plain language.
-2. Record why the outcome matters and who will use it.
-3. Separate in-scope work from explicit exclusions.
-4. Capture known repositories, systems, documents, and constraints without
+1. Run the complete pack's `ensure-project-workspace.mjs` from the current
+   directory. Reuse the returned mission workspace or let it initialize one
+   and generate `mission_id`. Do not ask the user to name or manage it.
+2. State the desired outcome in plain language.
+3. Record why the outcome matters and who will use it.
+4. Separate in-scope work from explicit exclusions.
+5. Capture known repositories, systems, documents, and constraints without
    assuming ownership or authority.
-5. Define observable acceptance evidence.
-6. Record risks, unresolved decisions, and conditions that require stopping.
-7. Ask the user to approve the mission before treating it as active.
+6. Define observable acceptance evidence.
+7. Record risks, unresolved decisions, and conditions that require stopping.
+8. Ask the user to approve the mission before treating it as active.
 
 ## Output
 
@@ -34,7 +37,7 @@ Write `mission.json`:
 ```json
 {
   "format": "dubsar.project-mission/1",
-  "mission_id": "local-stable-id",
+  "mission_id": "generated-automatically",
   "title": "short title",
   "desired_outcome": "plain-language outcome",
   "purpose": "why it matters",
@@ -50,9 +53,14 @@ Write `mission.json`:
 }
 ```
 
-When installed with the complete pack, use
-`../dubsar-project-continuity/scripts/init-project-workspace.mjs` with an
-explicit `--output` directory. Otherwise create the documented JSON manually.
+When installed with the complete pack, run:
+
+```bash
+node ../dubsar-project-continuity/scripts/ensure-project-workspace.mjs --start <current-directory>
+```
+
+Otherwise create the documented JSON manually with one generated local
+identifier.
 
 ## Limits
 

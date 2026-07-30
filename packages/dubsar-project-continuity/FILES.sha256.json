@@ -1,18 +1,18 @@
 {
   "format": "dubsar.public-file-inventory/1",
-  "root_sha256": "334a46b2d45f7d7a81020a531b3b4f483b0efe1b1377958b638745d7872a7aa3",
+  "root_sha256": "467675e8ed0818e0e8b5975977f02fa850a01d74614bb79abe1930eeaa1b8097",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
-      "sha256": "401d10f5409742e1b638631248e75a9471efa28ecc31efe0dc558750656b151b"
+      "sha256": "2349870bb05dea54d5e917aa168e6055c10faffceab12b89c19f0f695ef28e77"
     },
     {
       "path": ".codex-plugin/plugin.json",
-      "sha256": "55adb147a56581b192f6480ecb10ab0326a2daf73d0f18fb84e82bb733b4f57a"
+      "sha256": "24ddcabf59ab27b89e21b78abad7d5a9fed94ce988cdacc7d23128714348245f"
     },
     {
       "path": ".cursor-plugin/plugin.json",
-      "sha256": "379203d17ead935ae908b1f53426f4831808c8fe57c60e69cc9898cb70321cce"
+      "sha256": "d5c844ed5ac2c026fd56b9318012e296156c813cf99e6b797b968c3f08d5cf11"
     },
     {
       "path": "LICENSE",
@@ -20,11 +20,15 @@
     },
     {
       "path": "PROVENANCE.json",
-      "sha256": "f21037d3bfa3ea3284294ca57573aa738df54ca28c217322cb9ff06b4e28edf6"
+      "sha256": "d853a1ffa43388406f2ecb97959a58d4ff4f74cb925d8858ad5c0f3c286e3468"
     },
     {
       "path": "README.md",
-      "sha256": "35dce1d80cc03182bbda54871d5f705bffef6342a56f31820c2646b599aa4341"
+      "sha256": "a71a9ae59de3fc3cf0ac0f4d27b20f321cb677f01118e263eede8b47071928e1"
+    },
+    {
+      "path": "scripts/ensure-project-workspace.mjs",
+      "sha256": "afae2104753fd9543bad4d39b88aa6e2eb80b7c7a853dc8a2ff02acb0acbae74"
     },
     {
       "path": "scripts/init-project-workspace.mjs",
@@ -56,15 +60,19 @@
     },
     {
       "path": "skills/dubsar-project-continuity/agents/openai.yaml",
-      "sha256": "f35482e987b75a2ef41b063f2aef0ec2a26873aa43a8b017719dc98928bf8f78"
+      "sha256": "1f2062c543b8533e729cd7e269473155b82d8bc0b7392aa11f65b116d4bf6ff5"
     },
     {
       "path": "skills/dubsar-project-continuity/references/data-contracts.md",
-      "sha256": "cb8bd1401423f21a463e5a25e87660564bed570eb79b6a37af98249ced1659b5"
+      "sha256": "5f1e85806e5b05213d206f3612b4244e044494928677f1cdc07bb6cab8f5be62"
+    },
+    {
+      "path": "skills/dubsar-project-continuity/scripts/ensure-project-workspace.mjs",
+      "sha256": "2b438100ed5155b485ed1296080d2d99ea22812f55a45cc84992e3314af077e3"
     },
     {
       "path": "skills/dubsar-project-continuity/scripts/init-project-workspace.mjs",
-      "sha256": "5a9e3a4d2eeac3a64d245e35e686dcccdad2c809fe7bdd4a9a5d66d57d148f13"
+      "sha256": "4ade20d5180c238873b24a6d019e6e7012e18376b08de7b8e5653e23a8c432f6"
     },
     {
       "path": "skills/dubsar-project-continuity/scripts/project-model.mjs",
@@ -76,7 +84,7 @@
     },
     {
       "path": "skills/dubsar-project-continuity/scripts/safe-io.mjs",
-      "sha256": "54b3d44ace7c4b1cded3edadda4438ba80681f3c08cb69296156f32067425c4b"
+      "sha256": "4674d28ac58a9de742b38ad48e2d672a3a3551f3f3dbf69d6fe58d08ef3435e0"
     },
     {
       "path": "skills/dubsar-project-continuity/scripts/validate-project-workspace.mjs",
@@ -84,7 +92,7 @@
     },
     {
       "path": "skills/dubsar-project-continuity/SKILL.md",
-      "sha256": "4a67aa5f42b4e7466b5397c72c82934b3b2a82fc4f09429ea46dac8cfa46f840"
+      "sha256": "0a7825bb76c45c63181235ea44ba290d6d17eb11f16f445d8cf3d66af56b5aee"
     },
     {
       "path": "skills/frame-project-mission/agents/openai.yaml",
@@ -92,7 +100,7 @@
     },
     {
       "path": "skills/frame-project-mission/SKILL.md",
-      "sha256": "24d11c95423e4506c8a5670376003fc22124d7b37941464664a3f95949419405"
+      "sha256": "b895f00dc0bae4aefb4f8d08668c8cf2ca3d1e0325da11b759a1380680d703ec"
     },
     {
       "path": "skills/record-project-evidence/agents/openai.yaml",
@@ -104,11 +112,11 @@
     },
     {
       "path": "skills/resume-project-context/agents/openai.yaml",
-      "sha256": "0364131dea872e60a8f08147af56028777f39d6abc4f83b8567014c8fb98676b"
+      "sha256": "9832ce7a139cc3e5efd65c64f162e5e507aa1494acf3d412ab91594f43716032"
     },
     {
       "path": "skills/resume-project-context/SKILL.md",
-      "sha256": "070714e64eecc7b7d9c684d2fdd1e7a23f45f74b4097b87411c239450237a9f2"
+      "sha256": "bc766e611b1c9eca2b08caa49b548c33f98d1972a4a3c44601e4d27ecdf43a0d"
     }
   ]
 }

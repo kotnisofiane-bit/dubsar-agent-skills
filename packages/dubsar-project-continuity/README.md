@@ -14,6 +14,25 @@ verifiable, and safely resumable across people, tools, and sessions.
 | `$resume-project-context` | Reconstruct state after interruption or handoff |
 | `$dubsar-project-continuity` | Run the complete continuity workflow |
 
+## Lightweight continuity
+
+The initializer generates one opaque local `mission_id` automatically. The
+same mission keeps that identifier across conversations, context compression,
+host changes, interruptions, and handoffs. Users do not need to choose or
+remember it.
+
+On resume, the helper searches from the current directory to the nearest Git
+project root and reuses the nearest ancestor `.dubsar-project`. Without a Git
+root, the supplied start directory is the boundary. Initialize a new workspace
+only when no mission workspace exists. For a pre-existing project, start a
+fresh local non-canonical record and preserve uncertain history as reported or
+unverified.
+
+One directory scope has one active mission workspace. If the request is a
+genuinely different mission, confirm that separation before reuse, then create
+an exact `.dubsar-project` marker inside a dedicated in-project directory. Do
+not delete, overwrite, or recycle the previous mission identifier.
+
 ## Workflow
 
 1. turns an idea into a bounded mission with explicit proof;
@@ -30,7 +49,8 @@ complete sequence.
 It does not grant execution authority, run background actions, synchronize
 repositories, merge branches, deploy software, or communicate with a production
 DUBSAR service. It declares no hooks or MCP dependencies, and its scripts make
-no network calls.
+no network calls. This pack contains doctrine and local helpers only, not the
+DUBSAR Core, product runtime, or canonical session records.
 
 ## Hosts
 
@@ -44,17 +64,23 @@ The same `skills/` directory is used by:
 
 ## Local scripts
 
+From the target project's root, point to the installed pack:
+
 ```bash
-node scripts/init-project-workspace.mjs --output ./.dubsar-project
-node scripts/validate-project-workspace.mjs --root ./.dubsar-project
-node scripts/render-project-summary.mjs --root ./.dubsar-project --output ./handoff
+node /absolute/path/to/dubsar-project-continuity/scripts/ensure-project-workspace.mjs --start .
+node /absolute/path/to/dubsar-project-continuity/scripts/validate-project-workspace.mjs --root ./.dubsar-project
+node /absolute/path/to/dubsar-project-continuity/scripts/render-project-summary.mjs --root ./.dubsar-project --output ./handoff
 ```
 
 All scripts are offline and dependency-free. They never run project commands.
-Pass explicit input and output paths.
+The `ensure` helper resolves or initializes the workspace automatically and
+returns only an opaque identifier and a path relative to the supplied
+`--start`. The host resolves that path locally before invoking another helper;
+it does not need to expose an absolute path. The lower-level `init` helper
+remains available for controlled explicit initialization.
 
 ## Status
 
-Public beta v0.1.0 under the MIT License. The package includes reviewed
+Public beta v0.1.1 under the MIT License. The package includes reviewed
 clean-room provenance and a deterministic release inventory. See the
 repository-level `PUBLIC_BOUNDARY.md`.

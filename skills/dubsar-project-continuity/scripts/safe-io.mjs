@@ -17,7 +17,7 @@ export class PublicPluginError extends Error {
   }
 }
 
-export function parseArgs(argv, required) {
+export function parseArgs(argv, required, allowed = null) {
   const values = new Map();
   for (let index = 0; index < argv.length; index += 1) {
     const token = argv[index];
@@ -25,6 +25,9 @@ export function parseArgs(argv, required) {
       throw new PublicPluginError("INVALID_ARGUMENTS");
     }
     const name = token.slice(2);
+    if (allowed !== null && !allowed.includes(name)) {
+      throw new PublicPluginError("INVALID_ARGUMENTS");
+    }
     if (values.has(name)) {
       throw new PublicPluginError("DUPLICATE_ARGUMENT");
     }

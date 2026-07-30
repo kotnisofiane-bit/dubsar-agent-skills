@@ -2,7 +2,7 @@
 
 [![validate](https://github.com/kotnisofiane-bit/dubsar-agent-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/kotnisofiane-bit/dubsar-agent-skills/actions/workflows/validate.yml)
 
-![DUBSAR workflow showing an automation trigger, data source, executed rule, generated output, human validation, and controlled decision](docs/assets/dubsar-agent-skills.png)
+![DUBSAR Agent Skills: lightweight local project-continuity and audit-readiness workflows](docs/assets/dubsar-agent-skills.png)
 
 Portable, offline Agent Skills for automation audit preparation and
 evidence-aware project continuity.
@@ -12,7 +12,12 @@ Codex, Cursor, and Hermes Agent. The packs help an AI agent structure local
 evidence and project context without connecting to production services,
 granting itself authority, or presenting preparation work as an audit result.
 
-> **Status:** public beta v0.1.0. The local test suite covers public-boundary
+This repository is a lightweight public adaptation of the DUBSAR governance
+doctrine: portable instructions, local contracts, and deterministic helpers.
+It is not the DUBSAR product and includes no hooks, MCP server, DUBSAR Core
+connection, enforcement runtime, or background orchestrator.
+
+> **Status:** public beta v0.1.1. The local test suite covers public-boundary
 > rules, deterministic outputs, synthetic end-to-end workflows, host manifest
 > resolution, and common unsafe inputs. This is not a certification of the
 > packs, an audited system, or any host product.
@@ -45,6 +50,27 @@ operate a production DUBSAR runtime.
 
 Both packs use standard `SKILL.md` folders. Their executable helpers require
 Node.js 20 or newer and use only Node.js built-ins.
+
+### Continuity without session management
+
+Identifiers are internal local keys, not user-facing session controls. The
+helpers generate one `mission_id` per project mission and one `case_id` per
+audit-preparation case, then store that identifier in every related local
+file. Users do not need to choose, copy, or remember it.
+
+Changing chat, agent host, or context window does not create a new identifier.
+The helper searches upward only to the nearest Git project root and reuses the
+nearest matching ancestor workspace. Without a Git root, the supplied start
+directory is the project boundary. A pre-existing project without continuity
+files may start a fresh local, non-canonical continuity record without
+inventing earlier DUBSAR Core, session, execution, approval, or evidence
+records.
+
+Each directory scope has one active project workspace and one active audit
+workspace. When the requested work is genuinely a different mission or case,
+the skill asks for that material separation once, then creates an exact marker
+inside a dedicated in-project directory. It never recycles an old identifier
+or asks the user to invent the new one.
 
 ## All 12 skills
 
@@ -91,15 +117,21 @@ status is an audit verdict or permission to execute work.
 To try the local helpers directly:
 
 ```bash
-node packages/dubsar-audit-readiness/scripts/init-audit-workspace.mjs --output ./audit-case
-node packages/dubsar-audit-readiness/scripts/validate-audit-workspace.mjs --root ./audit-case
+node packages/dubsar-audit-readiness/scripts/ensure-audit-workspace.mjs --start .
+node packages/dubsar-audit-readiness/scripts/validate-audit-workspace.mjs --root ./.dubsar-audit
 
-node packages/dubsar-project-continuity/scripts/init-project-workspace.mjs --output ./.dubsar-project
+node packages/dubsar-project-continuity/scripts/ensure-project-workspace.mjs --start .
 node packages/dubsar-project-continuity/scripts/validate-project-workspace.mjs --root ./.dubsar-project
 ```
 
-The helpers require explicit paths and refuse unsafe traversal, symbolic links,
-and destructive overwrites.
+The `ensure-*` commands are the normal entry points: they reuse the nearest
+ancestor marker or create one at the current Git project root. An optional
+`--workspace` override must still be the exact marker name and remain inside
+that project. The returned `workspace` is relative to the supplied `--start`;
+an agent host resolves it locally before invoking a later helper, without
+printing an absolute path. The lower-level `init-*` helpers remain available
+for controlled explicit initialization. All helpers refuse unsafe traversal,
+links, partial workspaces, identity conflicts, and destructive overwrites.
 
 ## Install in an agent host
 
@@ -136,14 +168,17 @@ The public boundary is intentionally narrow:
 - no account, secret, production connector, MCP server, hook, or background
   process is required;
 - runtime helpers do not read environment variables or access the network;
+- mission and case identifiers are generated once, stored locally, and reused
+  across conversations and context compression;
 - paths are explicit, traversal and symbolic links are rejected, and
   non-empty output directories are not overwritten;
 - JSON is stable UTF-8 with sorted keys, relative paths, and SHA-256
   inventories where applicable;
 - evidence language preserves `observed`, `reported`, `derived`, and
   `unverified` distinctions;
-- human confirmation remains required at scope, evidence, export, contract, and
-  handoff boundaries;
+- human confirmation remains focused on material scope, evidence, export, and
+  execution-boundary decisions; routine resume and context compression require
+  no new approval;
 - readiness, continuity, and integrity statuses describe local artifacts, not
   legal compliance, system safety, business approval, or execution authority.
 

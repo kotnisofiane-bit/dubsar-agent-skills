@@ -1,6 +1,16 @@
 # Audit-readiness data contracts
 
-Every document uses the same non-secret local `case_id`.
+Every document for one bounded audit-preparation case shares one automatically
+generated, non-secret local `case_id`. It belongs to the case, not to a chat,
+host session, or context window. Reuse it until the case is deliberately
+closed or split. Users do not need to choose or remember it. An explicit
+override remains available for controlled tooling and tests.
+
+One directory scope has one active audit workspace. A materially different
+case requires an explicit human separation decision before reuse. Create its
+exact `.dubsar-audit` marker inside a dedicated in-project directory and let
+the helper generate the new ID; never delete, overwrite, or recycle the
+previous case ID.
 
 ## Required files
 

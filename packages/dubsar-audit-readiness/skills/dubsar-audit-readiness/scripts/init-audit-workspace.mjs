@@ -1,3 +1,5 @@
+import { randomUUID } from "node:crypto";
+import { fileURLToPath } from "node:url";
 import {
   parseArgs,
   prepareOutputDirectory,
@@ -6,9 +8,11 @@ import {
   PublicPluginError,
   writeJsonExclusive,
 } from "./safe-io.mjs";
-import { fileURLToPath } from "node:url";
 
-export async function initAuditWorkspace(output, caseId = "case-local-001") {
+export async function initAuditWorkspace(
+  output,
+  caseId = `case-local-${randomUUID()}`,
+) {
   if (!/^[a-z0-9][a-z0-9._-]{2,63}$/i.test(caseId)) {
     throw new PublicPluginError("INVALID_CASE_ID");
   }

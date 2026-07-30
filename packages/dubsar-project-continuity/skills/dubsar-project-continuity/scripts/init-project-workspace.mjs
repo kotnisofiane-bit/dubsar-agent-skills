@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import {
   parseArgs,
@@ -10,7 +11,7 @@ import {
 
 export async function initProjectWorkspace(
   output,
-  missionId = "mission-local-001",
+  missionId = `mission-local-${randomUUID()}`,
 ) {
   if (!/^[a-z0-9][a-z0-9._-]{2,63}$/i.test(missionId)) {
     throw new PublicPluginError("INVALID_MISSION_ID");
