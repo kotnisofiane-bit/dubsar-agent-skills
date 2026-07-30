@@ -2,7 +2,7 @@
   "name": "dubsar-audit-readiness",
   "displayName": "DUBSAR Audit Readiness",
   "description": "Prepare a bounded automation audit from local evidence without making compliance claims.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "DUBSAR"
   },

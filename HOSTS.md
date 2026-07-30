@@ -9,6 +9,11 @@ Review the source before installing it. Plugin and skill installation gives an
 agent host access to local instructions and helper scripts under that host's
 normal sandbox and approval policy.
 
+Host conversations are not governance records. Restarting a host, opening
+another chat, changing tools, or compressing context does not create a new
+mission or case. The skills reuse the identifier stored in the local
+workspace.
+
 ## Compatibility at a glance
 
 | Host | Repository entry point | Installation surface | Skills exposed |
@@ -70,8 +75,8 @@ codex
 ```
 
 Inside Codex, open `/plugins`, select **DUBSAR Agent Skills**, inspect a pack,
-and install it. Start a new Codex session after installation so the six bundled
-skills are discovered.
+and install it. Restart Codex after installation so the six bundled skills are
+discovered.
 
 When working directly inside the clone, Codex can also discover the
 repo-scoped `.agents/plugins/marketplace.json`. The explicit marketplace
@@ -161,11 +166,12 @@ confirmation at the boundaries documented by each skill.
 ## Current validation boundary
 
 Repository tests verify that host manifests resolve to the intended local
-packages and portable skills. For v0.1.0, both packs were also installed from
-the public marketplace in a fresh Claude Code profile, and the test suite
-passed on Windows and Linux with Node.js 20 and 22. This does not prove that
-every current host build, operating system, enterprise policy, or marketplace
-UI will install the packs. Release evidence remains tracked in
+packages and portable skills. The v0.1.0 release was installed from the public
+marketplace in a fresh Claude Code profile, and its test suite passed on
+Windows and Linux with Node.js 20 and 22. Changes in v0.1.1 must pass the same
+release checks before publication. This does not prove that every current host
+build, operating system, enterprise policy, or marketplace UI will install the
+packs. Release evidence remains tracked in
 [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).
 
 If a host changes its plugin format or installation flow, prefer that host's

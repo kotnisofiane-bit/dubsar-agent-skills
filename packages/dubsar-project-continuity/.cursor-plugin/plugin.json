@@ -2,7 +2,7 @@
   "name": "dubsar-project-continuity",
   "displayName": "DUBSAR Project Continuity",
   "description": "Keep project intent, lots, execution boundaries, evidence, and handoffs explicit.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "DUBSAR"
   },
