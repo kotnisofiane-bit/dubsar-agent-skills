@@ -1,5 +1,7 @@
 # DUBSAR Agent Skills
 
+[![validate](https://github.com/kotnisofiane-bit/dubsar-agent-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/kotnisofiane-bit/dubsar-agent-skills/actions/workflows/validate.yml)
+
 ![DUBSAR workflow showing an automation trigger, data source, executed rule, generated output, human validation, and controlled decision](docs/assets/dubsar-agent-skills.png)
 
 Portable, offline Agent Skills for automation audit preparation and
@@ -153,11 +155,14 @@ domain.
 Public beta validation includes:
 
 - public-boundary scans for both packages;
+- GitHub Actions on Windows and Linux with Node.js 20 and 22;
 - synthetic CLI and end-to-end workflows;
 - deterministic audit export and project handoff checks;
 - credential, path traversal, link escape, contradiction, and unsafe-markup
   cases;
-- resolution checks for Claude Code, Codex, and Cursor manifests.
+- resolution checks for Claude Code, Codex, and Cursor manifests;
+- a fresh Claude Code profile installation of both packs from the public
+  marketplace, exposing six skills per pack.
 
 Run `npm test` on the exact commit you intend to use. Host marketplace
 validation, fresh-profile installation, cross-platform checks, provenance

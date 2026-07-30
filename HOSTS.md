@@ -161,10 +161,12 @@ confirmation at the boundaries documented by each skill.
 ## Current validation boundary
 
 Repository tests verify that host manifests resolve to the intended local
-packages and portable skills. They do not prove that every current host build,
-operating system, enterprise policy, or marketplace UI will install the packs.
-Fresh-profile host validation and cross-platform release checks remain tracked
-in [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).
+packages and portable skills. For v0.1.0, both packs were also installed from
+the public marketplace in a fresh Claude Code profile, and the test suite
+passed on Windows and Linux with Node.js 20 and 22. This does not prove that
+every current host build, operating system, enterprise policy, or marketplace
+UI will install the packs. Release evidence remains tracked in
+[RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).
 
 If a host changes its plugin format or installation flow, prefer that host's
 official documentation and open an issue or pull request with the exact host
